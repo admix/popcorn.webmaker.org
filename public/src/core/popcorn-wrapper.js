@@ -318,7 +318,7 @@ define( [ "localized", "core/logger", "core/eventmanager", "util/uri", "util/acc
      * and insert it as a script in the head if that fails.
      */
     function createPopcorn( popcornString ){
-      var popcornFunction = new Function( "", popcornString ),
+      var popcornFunction = function(){return "" && popcornString},
           popcorn = popcornFunction();
       if ( !popcorn ) {
         var popcornScript = document.createElement( "script" );
